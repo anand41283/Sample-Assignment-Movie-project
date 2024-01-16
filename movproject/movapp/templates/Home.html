@@ -1,0 +1,416 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movei</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- ------------------------------------------navbar------------------------------------------------ -->
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="{% static 'film-reel-36145.png' %}" class="icon" width="30" height="30" alt=""
+          ></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fs-5" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5" href="{% url 'GenMovlist' %}">Genre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5" href="{% url 'movielist' %}">Movies</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active fs-5" href="#">Plays</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5" href="#">Activities</a>
+          </li> -->
+
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark me-2" type="submit">Search</button>
+          <button class="btn btn-danger" type="submit">SignUp</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <!-- --------------------------------------------carousel----------------------------------------------- -->
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner mt-5">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1700146033284_webpage.jpg" class="d-block w-100"
+          height="350px" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="https://assets-in.bmscdn.com/promotions/cms/creatives/1699965931661_sunburncolombowebshowcase1240x300.jpg"
+          class="d-block w-100" height="350px" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'peakpx.jpg' %}" class="d-block w-100" height="350px" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden ">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- --------------------------------------------------------------------------------------------------------------------- -->
+  <div class="boxbgcolor">
+  <h2 class="fs-4">Recommended Movies</h2>
+  <!-- ------------------------------------------------card--------------------------------------------------------------------- -->
+  <div class="container-fluid box1">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://youtu.be/vEjTUDjjU6A?si=HFxngjdMh51LkgXX">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny42LzEwICAxNTYuM0sgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00313411-kzwupkjajz-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Tiger-3</h5>
+      </div>
+      <!-- -----------------------------------2 -->
+      <div class="col-sm">
+        <div class="card" style="width: 11.2rem;">
+          <a href="https://www.youtube.com/watch?v=iffS4JWxai0&pp=ygUUa2FubnVyIHNxdWFkIHRyYWlsZXI%3D">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BNTMxZTQ1ZmEtOWM3Ny00MGQzLTgyMjgtZGMzNDM0YjVhZjMzXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg"
+              class="card-img-top card-img-bottom" alt="ks">
+          </a>
+        </div>
+        <h5>Kannur Squad</h5>
+      </div>
+      <!-- -------------------------------------------3 -->
+      <div class="col-sm">
+        <div class="card" style="width: 9rem;">
+          <a href="https://www.youtube.com/watch?v=uisBaTkQAEs&pp=ygUSZmFzdCBhbmQgZnVyaW91cyA4">
+            <img
+              src="https://w0.peakpx.com/wallpaper/390/480/HD-wallpaper-furious-8-2017-movie-poster-the-fast-and-the-fierce.jpg"
+              class="card-img-top card-img-bottom" alt="f8">
+          </a>
+        </div>
+        <h5 class="cd13">Fast&Furious 8</h5>
+      </div>
+      <!-- --------------------------------------------------- 4-->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=uc0kllY_Rgo&pp=ygUOa2FkaGFsIHRyYWlsZXI%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTAuM0sgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00355670-ntslusscdd-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="kadhal">
+          </a>
+        </div>
+        <h5>Kadhal</h5>
+      </div>
+      <!-- ------------------------------------------------------------------------5 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=upgFiKwsv8o&pp=ygUVZmFtaWx5IHRyYWlsZXIgYmFzaWwg">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC44LzEwICA0LjJLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00376040-dbjagdkcdg-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="falimy">
+          </a>
+        </div>
+        <h5>Falimy</h5>
+      </div>
+      <!-- ----------------------------------------------------6 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=udAlOSn4yFo&pp=ygUbZGhydXZhIG5hdGNoYXRoaXJhbSB0cmFpbGVy">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTExLjlLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00015426-fdfmcvcups-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Dhruva Natchathiram</h5>
+      </div>
+      <!-- -------------------------------------------------7 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=Po3jStA673E&pp=ygULbGVvIHRyYWlsZXI%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4zLzEwICA1MjUuNEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00351731-ctardtxqsw-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="leo">
+          </a>
+        </div>
+        <h5 class="cd17">Leo</h5>
+      </div>
+      <!-- ------------------------------------------------------ -->
+      <!-- <div class="col">
+        <div class="card" style="width: 9rem;">
+          <a href="https://youtu.be/vEjTUDjjU6A?si=HFxngjdMh51LkgXX">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny42LzEwICAxNTYuM0sgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00313411-kzwupkjajz-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Tiger-3</h5>
+      </div> -->
+    </div>
+  </div>  
+</div>
+<!-- heading--------------------------------------------------------------------------------------------------------------------- -->
+<div class="boxbgcolor">
+  <h2 class="fs-4">Latest Movies</h2>
+  <!-- ------------------------------------------------card2--------------------------------------------------------------------- -->
+  <div class="container-fluid box1">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 11rem;">
+          <a href="https://www.youtube.com/watch?v=OKBMCL-frPU&pp=ygUOdmlrcmFtIHRyYWlsZXI%3D">
+            <img
+              src="https://feeds.abplive.com/onecms/images/uploaded-images/2021/07/10/273e787ba809e725948334340c658e68_original.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Vikram</h5>
+      </div>
+      <!-- -----------------------------------2 -->
+      <div class="col-sm">
+        <div class="card" style="width: 11rem;">
+          <a href="https://www.youtube.com/watch?v=LLUeCstylF0&pp=ygUOdHVwYWtpIHRyYWlsZXI%3D">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZTc4YWY5MzAtOTc4Zi00NDVmLThlMGItYjliOGNkYmM3NDBmXkEyXkFqcGdeQXVyOTk3NTc2MzE@._V1_.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Thuppaki</h5>
+      </div>
+      <!-- -------------------------------------------3 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=qnYl62CUVU4&pp=ygUcamlnYXJ0aGFuZGEgZG91YmxlIHggdHJhaWxlcg%3D%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC45LzEwICA1Mi43SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00359702-kxzxceepbm-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5 class="cd23">Jigarthanda Double x</h5>
+      </div>
+      <!-- --------------------------------------------------- 4-->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=wS_qbDztgVY&pp=ygUWY2FwdGFpbiBtYXJ2ZWwgdHJhaWxlcg%3D%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny4yLzEwICAxNy41SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00310793-zmxvapngxx-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="leo">
+          </a>
+        </div>
+        <h5 class="cd24">The Captain Marvel</h5>
+      </div>
+      <!-- ------------------------------------------------------------------------5 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=llKjFW1gv0M&pp=ygUTc2FwdGFzYWdhcmEgdHJhaWxlcg%3D%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS8xMCAgOS40SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00367399-pelkrdzhut-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5 class="cd25">Saptha Sagareeche ello</h5>
+      </div>
+      <!-- ----------------------------------------------------6 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=UtbJXNFKLTY&pp=ygUNamFwYW4gdHJhaWxlcg%3D%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-NC45LzEwICAyMy4ySyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00370522-femnlchrmb-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5 class="cd26">Japan</h5>
+      </div>
+      <!-- -------------------------------------------------7 -->
+      <div class="col-sm">
+        <div class="card" style="width: 10rem;">
+          <a href="https://www.youtube.com/watch?v=9z-NeZyiyF8&pp=ygUgdmlubmFpdGhhYW5kaSB2YXJ1dmFheWFhIHRyYWlsZXI%3D">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS8xMCAgOC43SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00038721-btaekvaxhj-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5 class="cd27">vinaithaandi varuvaayaa</h5>
+      </div>
+      <!-- ------------------------------------------------------ -->
+      <!-- <div class="col">
+        <div class="card" style="width: 9rem;">
+          <a href="https://youtu.be/vEjTUDjjU6A?si=HFxngjdMh51LkgXX">
+            <img
+              src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny42LzEwICAxNTYuM0sgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00313411-kzwupkjajz-portrait.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Tiger-3</h5>
+      </div> -->
+    </div>
+  </div>  
+</div>
+      <!-- <div class="col">
+        <div class="card" style="width: 10rem;">
+          <a href="https://youtu.be/vEjTUDjjU6A?si=HFxngjdMh51LkgXX">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BNTMxZTQ1ZmEtOWM3Ny00MGQzLTgyMjgtZGMzNDM0YjVhZjMzXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg"
+              class="card-img-top card-img-bottom" alt="...">
+          </a>
+        </div>
+        <h5>Kannur Squad</h5>
+      </div> -->
+      
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/stream-leadin-web-collection-202210241242.png" class="container-fluid dimg" alt="">
+      
+
+      <!-- -------------------------------------------footer------------------------------------------------ -->
+
+      <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="footer">     
+<div class="container-fluid">
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white curvefooter"
+          style="background-color: #3e4551"
+          >
+    <!-- Grid container -->
+    <div class="container-fluid">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="">
+            <h4 class="text-uppercase text-dark" >Help</h4>
+
+            <p class="text-dark">
+              About us|Contact Us|Current Opening|press relese|Press coverage|Sitemap|FAQs|Terms of comditions|Privacy policy
+            </p>
+            <h6 class="text-uppercase text-dark" >Bookmyshow exclusives</h6>
+
+            <p class="text-dark">
+              Lollapalooza India|Superstar|BookAsmile|Corperate vouchers|Gift Cards|List My Show|Offers|Streams|Buzz|Trailers
+            </p>
+          </div>
+          <!--Grid column-->
+
+         
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="mb-4"><a href="https://www.bing.com/ck/a?!&&p=d5819d040a890f43JmltdHM9MTcwMDk1NjgwMCZpZ3VpZD0xMTYzMGEyNS03NDYyLTZkMDUtMzM2YS0xOWY0NzVjZjZjYWMmaW5zaWQ9NTIxOA&ptn=3&ver=2&hsh=3&fclid=11630a25-7462-6d05-336a-19f475cf6cac&psq=bookmyshow&u=a1aHR0cHM6Ly9pbi5ib29rbXlzaG93LmNvbS9leHBsb3JlL2hvbWU&ntb=1"><img src="./images/kisspng-bookmyshow-visakhapatnam-ticket-company-coupon-shows-5ac7c2d814f211.1362272315230409840858.png" height="50px" class="Bookmyshow"></a></hr>
+
+      <!-- Section: CTA -->
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p>
+      </section>
+      <!-- Section: CTA -->
+
+      <hr class="mb-4" />
+
+      <!-- Section: Social media -->
+      <section class="mb-4 text-center">
+        <!-- Facebook -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-facebook-f"></i
+          ></a>
+
+        <!-- Twitter -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-twitter"></i
+          ></a>
+
+        <!-- Google -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjQnKG-iOKCAxWbk1YBHXzeBLcQFnoECAYQAQ&url=https%3A%2F%2Fwww.google.com%2F&usg=AOvVaw1xDfJh-YduXzT4-Mrql0P3&opi=89978449"
+           role="button"
+           ><i class="fab fa-google"></i
+          ></a>
+
+        <!-- Instagram -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="#!"
+           role="button"
+           ><i class="fab fa-instagram"></i
+          ></a>
+
+        <!-- Linkedin -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="https://www.linkedin.com/in/anand-bs-7a0780242"
+           role="button"
+           ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+        <!-- Github -->
+        <a
+           class="btn btn-outline-light btn-floating m-1"
+           href="https://github.com/anand41283"
+           role="button"
+           ><i class="fab fa-github"></i
+          ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://github.com/anand41283"
+         >anand41283.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+</div> 
+      
+      
+      
+</body>
+
+</html>
