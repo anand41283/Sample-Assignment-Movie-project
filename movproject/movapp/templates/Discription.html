@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +15,12 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="./static/film-reel-36145.png" class="icon" width="30" height="30" alt=""
+          <a class="navbar-brand" href="#"><img src="{% static 'film-reel-36145.png' %}" class="icon" width="30" height="30" alt=""
               ></a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active fs-5" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a class="nav-link active fs-5" aria-current="page" href="{% url 'home2' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active fs-5" href="{% url 'GenMovlist' %}">Genre</a>

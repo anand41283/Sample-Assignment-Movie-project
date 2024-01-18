@@ -1,6 +1,7 @@
 from  django import forms
 from  django.forms import TextInput,Select,SelectDateWidget,ChoiceField
 from movapp.models import Movie,Genre
+from django.contrib.auth.models import User
 
 class GenreForm(forms.ModelForm):
     Genre=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Genre', 'style': 'width: 300px;', 'class': 'form-control'}))
@@ -60,3 +61,11 @@ class MovieForm(forms.ModelForm):
 
                 
         }
+
+class Registration(forms.ModelForm):
+    class Meta:
+        model=User 
+        fields=['first_name','last_name','username','email','password']       
+class LoginForm(forms.Form):
+    username=forms.CharField()
+    password=forms.CharField()        

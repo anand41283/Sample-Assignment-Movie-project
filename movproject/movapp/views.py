@@ -1,12 +1,17 @@
 from django.shortcuts import render,redirect
-from django.views.generic import View
-from movapp.forms import GenreForm,MovieForm
+from django.views.generic import View,CreateView,FormView,TemplateView
+from movapp.forms import GenreForm,MovieForm,Registration,LoginForm
 from movapp.models import Genre,Movie
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.urls import reverse_lazy
 
 # Create your views here.
 class Home(View):
     def get(self,request):
         return render(request,'Home.html')
+class HomeIn(TemplateView):  
+    template_name='home2.html'  
 
 class GenreFormView(View):
     def get(self,request):
@@ -108,7 +113,44 @@ class MovielistDiscription(View):
         qs=Movie.objects.get(id=id)
         filter=Genre.objects.filter(Genre=qs.Movie_genre)
         return render(request,'Discription.html',{"form":filter})
+    
+class UserRegistration(FormView):
+    template_name='reg.html'
+    form_class=Registration  
+    def post(self,request,*args,**kwargs):
+        form=Registration(request.POST)
+        if form.is_valid():
+            User.objects.create_user(**form.cleaned_data)
+            return redirect('login')
+        else:
+            print("invalid")
+            return redirect("Reg")
+            
+class UserLogin(FormView):
+    template_name='Login.html'
+    form_class=LoginForm
+    def post(self,request,*args,**kwargs):
+        form=LoginForm(request.POST)
+        if form.is_valid():
+            u_name=form.cleaned_data.get('username')
+            psw=form.cleaned_data.get('password')
+            u_obj=authenticate(request,username=u_name,password=psw)
+            if u_obj:
+                print("valid")
+                login(request,u_obj)
+                return redirect('home2')
+            else:
+                print("inavlid")
+                return redirect('login')
+        else:
+            print("incorrect")
+        return redirect('login')    
+class UserLogout(View):
+    def get(self,request):
+        logout(request) 
+        return redirect('home')             
 
+            
        
 
 

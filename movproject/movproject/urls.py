@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from movapp.views import GenreFormView,MovieFormView,GenreMovielist,Movielist,MovielistUpdate,MovielistDelete,GenreMovieView,Genrelist,GenrelistUpdate
-from movapp.views import Genrelistdelete,MovielistDiscription,Home
+from movapp.views import Genrelistdelete,MovielistDiscription,Home,UserRegistration,UserLogin,HomeIn,UserLogout
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Home.as_view(),name="home"),
+    path('Home',HomeIn.as_view(),name="home2"),
 
     path('genreform/',GenreFormView.as_view(),name="Gform"),
     path('genrelist/',Genrelist.as_view(),name="genrelist"),
@@ -32,6 +33,11 @@ urlpatterns = [
     path('Movielist/',Movielist.as_view(),name="movielist"),
     path('MovielistUpdate/<int:pk>/',MovielistUpdate.as_view(),name="MUpdate"),
     path('Movielistdelete/<int:pk>/',MovielistDelete.as_view(),name="Mdelete"),
-    path('MovielistDiscription/<int:pk>',MovielistDiscription.as_view(),name=("MDiscription"))
+    path('MovielistDiscription/<int:pk>',MovielistDiscription.as_view(),name=("MDiscription")),
+
+    path('register/',UserRegistration.as_view(),name="Reg"),
+    path('login/',UserLogin.as_view(),name="login"),
+    path('logout/',UserLogout.as_view(),name="logout"),
+
 
 ]
