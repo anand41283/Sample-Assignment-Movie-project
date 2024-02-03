@@ -5,14 +5,23 @@ from movapp.models import Genre,Movie
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 
 # Create your views here.
+def Signin_required(fn):
+    def Wrapper(request,*args,**kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+        else:
+            return fn(request,*args,**kwargs)
+    return Wrapper    
+
 class Home(View):
     def get(self,request):
         return render(request,'Home.html')
 class HomeIn(TemplateView):  
     template_name='home2.html'  
-
+@method_decorator(Signin_required,name="dispatch")
 class GenreFormView(View):
     def get(self,request):
         form= GenreForm()
@@ -27,6 +36,7 @@ class GenreFormView(View):
         # return render(request,'Genreform.html',{"form":form})    
         return redirect('GenMovlist')    
 
+@method_decorator(Signin_required,name="dispatch")
 class MovieFormView(View):
     def get(self,request):
         form=MovieForm()
@@ -40,12 +50,14 @@ class MovieFormView(View):
         form=MovieForm()    
         # return render(request,'moveiform.html',{"form":form})   
         return redirect('movielist')   
-    
+
+@method_decorator(Signin_required,name="dispatch")    
 class Genrelist(View):
     def get(self,request):
         genre=Genre.objects.all()
         return render(request,'genrelist.html',{"form":genre})
 
+@method_decorator(Signin_required,name="dispatch")
 class GenrelistUpdate(View):
     def get(self,request,*args,**kwargs):
         id=kwargs.get('pk')
@@ -62,23 +74,26 @@ class GenrelistUpdate(View):
             print("invalid")
         return redirect('GenMovlist')   
 
+@method_decorator(Signin_required,name="dispatch")
 class Genrelistdelete(View):
     def get(self,request,*args,**kwargs):
         id=kwargs.get('pk')
         Genre.objects.get(id=id).delete()
         return redirect('genrelist') 
             
-    
+@method_decorator(Signin_required,name="dispatch")    
 class GenreMovielist(View):
     def get(self,request):
         genre=Genre.objects.all()
         return render(request,'genremovielist.html',{"form":genre})
-    
+
+@method_decorator(Signin_required,name="dispatch")    
 class Movielist(View):
     def get(self,request):
         movies=Movie.objects.all()
         return render(request,'movielist.html',{"form":movies})    
-    
+
+@method_decorator(Signin_required,name="dispatch")    
 class MovielistUpdate(View):
     def get(self,request,*args,**kwargs):
         id=kwargs.get('pk')  
@@ -95,12 +110,14 @@ class MovielistUpdate(View):
             print("get out")
         return redirect('movielist')     
 
+@method_decorator(Signin_required,name="dispatch")
 class MovielistDelete(View):
     def get(self,request,*args,**kwargs):
         id=kwargs.get('pk')
         Movie.objects.get(id=id).delete()
         return redirect('movielist')
     
+@method_decorator(Signin_required,name="dispatch")    
 class GenreMovieView(View):
     def get(self,request,*args,**kwargs):
         id=kwargs.get('pk')
